@@ -1,0 +1,60 @@
+#navbar{
+    width: 100%;
+    display: flex;
+    background-color: aqua;
+    justify-content: space-around;
+    color: rgb(70, 46, 225);
+    font-size: 20px;
+}
+.love{
+    display: flex;
+}
+.love>img{
+    margin: 8px 8px 0px 0px;
+}
+.love>a{
+    margin-left: 20px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+.btn {
+    background-color: #ecb2cf;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 12px 20px;
+    padding: 12px;
+    cursor: pointer;
+  }
+  .btn:hover{
+    width: 120px;
+    background-color: rgb(149, 235, 118);
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+#container>button{
+    padding: 10px;
+    margin: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: 17px;
+}
+#container>button:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+@media only screen and (min-width: 381px) and (max-width: 768px) {
+    #container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+ 
+@media only screen and (min-width: 0px) and (max-width: 380px) {
+    #container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
