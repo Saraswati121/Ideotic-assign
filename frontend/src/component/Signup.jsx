@@ -18,7 +18,7 @@ export const Signup = () => {
 
 const handelSubmit =async (e)=>{
 e.preventDefault()
-const url= 'https://localhost:8080/auth/signup'
+const url= 'https://ideoticbackend.onrender.com/auth/signup'
 const {data:res} = await axios.post(url,data)
 nav('/login')
 console.log(res.message)

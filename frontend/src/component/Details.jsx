@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { Navbar } from './Navbar'
+import "./style.css"
 
-export const Details = ({e}) => {
+export const Details = ({singledog}) => {
   const [puppy,setPuppy] = useState([])
   useEffect(() => {
-         fetch(`https://dog.ceo/api/breed/${e}/images`)
+         fetch(`https://dog.ceo/api/breed/${singledog}/images`)
         .then((res)=>{ return res.json() })
         .then((data) => {
         setPuppy([...data.message])
@@ -12,11 +14,14 @@ export const Details = ({e}) => {
   },[])
   return (
     <div>
+      <Navbar/>
+    <div  className='singleDog'>
       {puppy.map((p)=>{
         return(
-          <div><img src={p} alt="" /></div>
+          <div><img src={p} alt="" height="95%" width="95%"/></div>
         )
       })}
+    </div>
     </div>
   )
 }

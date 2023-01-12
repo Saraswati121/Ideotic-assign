@@ -3,7 +3,7 @@ import {Navbar} from './Navbar'
 import { useNavigate } from 'react-router-dom'
 import "./style.css"
 
-export const Home = ({e}) => {
+export const Home = ({setSingleDog}) => {
   const [dog,setDog]= useState([])
   const nav= useNavigate()
 
@@ -29,7 +29,10 @@ export const Home = ({e}) => {
       <div id='container'>
         {dog.map((e) => {
           return(
-            <button onClick={()=>nav('/details')}>{e}</button>
+            <button onClick={()=>{
+              setSingleDog(e)
+              nav('/details')
+            }}>{e}</button>
           )
         })}
       </div>

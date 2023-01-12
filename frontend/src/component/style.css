@@ -184,3 +184,15 @@
     text-align: center;
     justify-content: center;
   }
+.singleDog{
+display: grid;
+grid-template-columns: repeat(3,33%);
+margin-top: 5px;
+gap: 8px;
+}
+.singleDog>div{
+margin: 8px;
+}
+.singleDog>div>img:hover{
+  transform: scale(1.05);
+}
