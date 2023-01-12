@@ -4,18 +4,18 @@ import './style.css'
 import { Link } from "react-router-dom";
 
 export const Login = () => {
-  const [data, setData] = useState({ email: "", password: "" });
+  const [datat, setDatat] = useState({ email: "", password: "" });
 
   const handleChange = (e)=>{
     const {value,name} = e.target
-    setData({...data,[name]:value})
+    setDatat({...datat,[name]:value})
   }
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 			const url = "https://ideoticbackend.onrender.com/auth/login";
-			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
+			const { data } = await axios.post(url, datat);
+			localStorage.setItem("token", data.token);
 			window.location = "/home";
   }
 
@@ -30,14 +30,14 @@ export const Login = () => {
 							placeholder="Email"
 							name="email"
 							onChange={handleChange}
-							value={data.email}
+							value={datat.email}
 						/>
 						<input
 							type="password"
 							placeholder="Password"
 							name="password"
 							onChange={handleChange}
-							value={data.password}
+							value={datat.password}
 						/><br/>
 						<button type="submit" className='grn_btn'>
 							Sing In
